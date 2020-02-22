@@ -1,4 +1,6 @@
 git 命令总结
+暂存区：不止是待提交的文件的列表，也不是保存修改文件的修改位置，暂存区保存的修改文件
+快照，保存所有的修改内容。
 
 git init 
 	git 仓库的初始化，会生成一个git 本地仓库
@@ -8,9 +10,24 @@ git commit -m ""
 	将暂存区的文件提交到本地仓库，形成一个版本和提交记录
 git push
 	将本地版本提交到远程记录
+git pull
+	从远程仓库拉取代码，并自动merge
 git clone 
 	从远程仓库克隆仓库， 
 		--bare 选项可以创建一个裸版本库，裸版本库没有工作区，不能进行操作，
 	可以当作共享版本库
 git remote add origin https://github.com/ShawnJoe/gitTest.git
 	本地仓库链接远程仓库
+git status 
+	查看当前工作区的修改，包括
+git diff
+	默认查看工作区和暂存区的区别
+	--staged  显示的是下一次commit时会提交到HEAD的内容，就是版本库和暂存区的区别
+	--cached: 对比暂存区(git add 之后)和版本库(git commit 之后)
+	HEAD: 对比工作区(未 git add)和版本库(git commit 之后)
+	
+git reset HEAD XXX.txt
+	将XXX.txt 文件从暂存区移除
+		正常情况下，暂存区的文件将会被重写，这在通常情况下不会是一个问题，
+	因为相同的修改可能仍会保存在工作区中。但是如果这个相同的文件在add 命令之后被
+	进一步修改了，那么相关信息很可能被丢掉了（可能是删除了保存的快照）
