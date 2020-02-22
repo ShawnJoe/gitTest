@@ -1,0 +1,16 @@
+git 命令总结
+
+git init 
+	git 仓库的初始化，会生成一个git 本地仓库
+git add []   
+	将工作区的修改复制到暂存区，可以跟单个文件，整个文件夹，或者所有的文件
+git commit -m ""
+	将暂存区的文件提交到本地仓库，形成一个版本和提交记录
+git push
+	将本地版本提交到远程记录
+git clone 
+	从远程仓库克隆仓库， 
+		--bare 选项可以创建一个裸版本库，裸版本库没有工作区，不能进行操作，
+	可以当作共享版本库
+git remote add origin https://github.com/ShawnJoe/gitTest.git
+	本地仓库链接远程仓库
