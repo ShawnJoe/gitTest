@@ -1,4 +1,3 @@
 abcdefghigklmn
 aaa
 bbb
-ccc
