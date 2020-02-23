@@ -37,3 +37,12 @@ git stash
 	git stash pop 恢复第一个
 	git stash list 列表
 	git stash show
+
+分支：
+	git branch 
+		查看当前所有分支，带*的表示当前分支
+	git branch xxx
+		创建新分支xxx，但是不切换
+	git checkout xxx
+		切换到分支 xxx 如果有的话
+	git branch 
