@@ -37,3 +37,14 @@ git stash
 	git stash pop 恢复第一个
 	git stash list 列表
 	git stash show
+
+分支：
+	git branch 
+		查看当前所有分支，带*的表示当前分支
+	git branch xxx
+		创建新分支xxx，但是不切换,后面可以增加某次提交的hash值，或者某个分支名，
+	git checkout xxx
+		切换到分支 xxx 如果有的话，切换分支时如果还存在一些修改没有提交可以需要先提交修改，
+	或者使用 --force 放弃这次修改，也可以使用stash 命令储存修改，然后进行切换。
+	git checkout -b xxx 
+		创建xxx 分支，并切换
