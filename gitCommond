@@ -11,7 +11,15 @@ git commit -m ""
 git push
 	将本地版本提交到远程记录
 git pull
-	从远程仓库拉取代码，并自动merge
+	从远程仓库拉取代码，并自动merge，相当于以下三条命令的和
+git fetch origin master
+	最常见的命令如取回origin 主机的master 分支：
+	取回更新后，会返回一个FETCH_HEAD ，
+指的是某个branch在服务器上的最新状态，我们可以在本地通过它查看刚取回的更新信息：
+git log -p FETCH_HEAD
+
+git merge FETCH_HEAD
+
 git clone 
 	从远程仓库克隆仓库， 
 		--bare 选项可以创建一个裸版本库，裸版本库没有工作区，不能进行操作，
@@ -36,7 +44,7 @@ git stash
 	将当前的工作区和暂存区的修改保存到存储的缓存，以存储栈的方式存储
 	git stash pop 恢复第一个
 	git stash list 列表
-	git stash show
+	git stash 
 
 分支：
 	git branch 
@@ -48,9 +56,16 @@ git stash
 	或者使用 --force 放弃这次修改，也可以使用stash 命令储存修改，然后进行切换。
 	git checkout -b xxx 
 		创建xxx 分支，并切换
-<<<<<<< HEAD
-=======
+
 	分支指针用于指向活动分支，他会每次提交时移动到最新的提交上。
+	git branch -r 
+		//查看远程所有分支
+	git branch -a 
+		//查看本地和远程的所有分支	
 git reset --hard xxx
 	xxx 表示某次提交记录的哈希值。强制返回到某次提交前的源码状态
->>>>>>> a-branch
+	
+通过变基净化历史 rebase
+	将提交历史改造为比较平滑的线性历史。git 会让我们想要移动的提交序列
+在目标分支上按照相同的顺序重新再现一遍，这就相当于我们为各个原提交做了个副本，
+他们拥有相同的修改集，相同的作者，日期以及注释信息。
