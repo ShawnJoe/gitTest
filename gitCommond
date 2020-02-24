@@ -48,3 +48,9 @@ git stash
 	或者使用 --force 放弃这次修改，也可以使用stash 命令储存修改，然后进行切换。
 	git checkout -b xxx 
 		创建xxx 分支，并切换
+<<<<<<< HEAD
+=======
+	分支指针用于指向活动分支，他会每次提交时移动到最新的提交上。
+git reset --hard xxx
+	xxx 表示某次提交记录的哈希值。强制返回到某次提交前的源码状态
+>>>>>>> a-branch
