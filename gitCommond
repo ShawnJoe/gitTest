@@ -80,4 +80,8 @@ git reset --hard xxx
 		1.1 更新master 分支
 			git checkout master
 			git pull -ff-only  只允许快进式合并，如果这时存在本地修改，该合并会被取消。
-			
+		1.2 船舰特性分支
+			git checkout -b feature-a
+			如果需要整个多人开发维护同一个分支，则需要将分支push 到版本库上
+			git push --set-upstream origin feature-a  
+				--set-upstream 参数会将本地的特性分支与远程版本库的新分支连接起来。
