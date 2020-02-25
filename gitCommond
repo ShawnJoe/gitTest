@@ -80,4 +80,4 @@ git reset --hard xxx
 		1.1 更新master 分支
 			git checkout master
 			git pull -ff-only  只允许快进式合并，如果这时存在本地修改，该合并会被取消。
-			
+测试一些东西		
